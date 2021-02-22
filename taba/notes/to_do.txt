@@ -1,0 +1,8 @@
+- split full_output.csv to poly_output.csv & block_output.csv
+
+- Execute same logic in grasshopper
+    - Solve python 2.7.8 lack of support of extended open (https://stackoverflow.com/questions/904041/reading-a-utf8-csv-file-with-python)
+
+- Create function to find polyline surrounding a given x,y coordinates
+- Add polyline column, and fill per attribute (row)
+- Write to output.csv ("complete version" (with an additional polyline column) of our current output)
