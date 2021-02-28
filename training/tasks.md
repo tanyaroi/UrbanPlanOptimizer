@@ -11,5 +11,3 @@
 3. Lists < 90min
     a. Lists
     b. 2D Lists
-
-Total time < 120min 
