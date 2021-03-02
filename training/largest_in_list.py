@@ -19,5 +19,4 @@ if len(numbers_list):
         if number < local_min:
             local_min = number
     output = local_min
-
 print(output)
