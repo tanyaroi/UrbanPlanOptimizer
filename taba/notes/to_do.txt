@@ -1,8 +1,34 @@
-- split full_output.csv to poly_output.csv & block_output.csv
+ToDo:
+- Refactor (break into functions, remove hardcoded, etc.) processor.py and rh_trial.py
+- Add Chelkot to code, filter by building type - needed for connecting to new buildings
 
-- Execute same logic in grasshopper
-    - Solve python 2.7.8 lack of support of extended open (https://stackoverflow.com/questions/904041/reading-a-utf8-csv-file-with-python)
+raw inputs:
+- survey.dwg (buildings, attributes)
+- chelkot.dxf (plots)
 
-- Create function to find polyline surrounding a given x,y coordinates
-- Add polyline column, and fill per attribute (row)
-- Write to output.csv ("complete version" (with an additional polyline column) of our current output)
+manual inputs:
+- compose composite.dwg from 
+    - a piece of survey.dwg
+    - a corresponding piece of chelkot.dxf
+    - match by coordinates and outline
+- create composite.csv by exporting from composite.dwg
+- create composite.3dm by importing from composite.dwg
+
+auto inputs (processor.py):
+- pre-process (clean bad values & remove redundant columns and lines) composite.csv into proc_composite.csv
+- split proc_composite.csv to proc_polyline.csv & proc_attributes.csv
+
+rh_trial:
+- set scriptcontext.doc to Rhino.ActiveDoc
+- remove all blocks
+- set current layer
+- remove redundant layers
+- Add attributes to buildings:
+    for each row in proc_attributes.csv
+    - for each object in Rhino's buildings layers
+        - check if object is a curve
+        - if so, check if curve's area bigger than MIN_BUILDING_AREA
+        - if so, check if (x,y,z) attributes is inside object
+        - if so, add relevent attributes to object's user text (key-value list, a standard dictionary)
+
+- Extrude all buildings according to NUM_FLOORS attribute multiplied by FLOOR_HEIGHT constant
