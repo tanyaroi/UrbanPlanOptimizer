@@ -14,21 +14,8 @@ import rhinoscriptsyntax as rs
 import Rhino as rh
 import scriptcontext as sc
 import Rhino.Geometry as rg
+from config import *
         
-
-####################################### Constants ##################################################################
-working_dir_path = "D:\\Google Drive\\Work\\Hired\\2020 - HQ Architects\\PyGH\\taba\\"
-target_labels_path = "config\\target_labels.csv"
-composite_path = "inputs\\composite.csv"
-proc_composite_path = "inputs\\proc_composite.csv"
-proc_polylines_path = "inputs\\proc_polylines.csv"
-proc_attributes_path = "inputs\\proc_attributes.csv"
-
-relevant_layers_dict = {"buildings": "2200", "plots" : "H0010A", "opt_buildings" : "XXXXX", "roads" : "2420"}
-plot_attribs_list = ["STREET_COD", "BLDG_NUM", "NUM_APTS_C"]
-MIN_BUILDING_AREA_SQM = 50
-FLOOR_HEIGHT_M = 3
-
 ###################################### Pre-Process #################################################################
 
 # set scriptcontext.doc to Rhino.ActiveDoc
