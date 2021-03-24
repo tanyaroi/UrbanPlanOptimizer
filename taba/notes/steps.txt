@@ -1,3 +1,4 @@
-1. Open composite-new.3dm
-2. Execute rh_trial.py
-3. Load taba_analysis.gh (Dor)
+1. execute processor.py
+2. Open composite-new.3dm
+3. Execute rh_trial.py
+4. Load taba_analysis.gh
