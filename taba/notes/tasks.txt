@@ -1,0 +1,5 @@
+1. Validate current refactoring:
+    a. check if everything is still working end-to-end test!!!
+    b. add, commit, push
+2. Continue refactoring:
+    a. for each function recognize and extract parametrs
